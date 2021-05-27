@@ -1,0 +1,8 @@
+.home{
+    text-align: center;
+    padding: 2rem;
+}
+.home > p{
+    font-size: 30px;
+    font-weight: bolder;
+}
