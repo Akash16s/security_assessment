@@ -5,6 +5,17 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 
 const Home = () => {
 
+
+        const saveTechniques=(techniques) =>{
+            localStorage.setItem('techniques', JSON.stringify(techniques));
+            setTechniques(techniques);
+        }
+        const getTechniques=()=> {
+            let items = JSON.parse(localStorage.getItem('techniques'));
+            return items;
+        }
+
+
     const [techniques,setTechniques] = useState([]);
 
     const temp =[
@@ -45,10 +56,17 @@ const Home = () => {
                 );
             });
         });
-        setTechniques(temp);
+        setTimeout(function(){ saveTechniques(temp); }, 1000);
+        
     }
     useEffect(() => {
+        if(localStorage.getItem('techniques') === null){
         fetchTactics();
+        }
+        else{
+        let data = getTechniques();
+        setTechniques(data);
+        }
     }, [])
 
     return (
@@ -82,4 +100,7 @@ const Home = () => {
         </div>
     );
 }
+
+
+
 export default Home;
