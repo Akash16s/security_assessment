@@ -19,20 +19,21 @@ const Home = () => {
     const [techniques,setTechniques] = useState([]);
 
     const temp =[
-        { 'techniqueId': 'TA0043', 'techniqueName': 'Reconnaissance', 'tactics': [], },
-        { 'techniqueId': 'TA0042', 'techniqueName': 'Resource Development', 'tactics': [] },
-        { 'techniqueId': 'TA0001', 'techniqueName': 'Initial Access', 'tactics': [] },
-        { 'techniqueId': 'TA0002', 'techniqueName': 'Execution', 'tactics': [] },
-        { 'techniqueId': 'TA0003', 'techniqueName': 'Persistence', 'tactics': [] },
-        { 'techniqueId': 'TA0004', 'techniqueName': 'Privilege Escalation', 'tactics': [] },
-        { 'techniqueId': 'TA0005', 'techniqueName': 'Defense Evasion', 'tactics': [] },
-        { 'techniqueId': 'TA0006', 'techniqueName': 'Credential Access', 'tactics': [] },
-        { 'techniqueId': 'TA0007', 'techniqueName': 'Discovery', 'tactics': [] },
-        { 'techniqueId': 'TA0008', 'techniqueName': 'Lateral Movement', 'tactics': [] },
-        { 'techniqueId': 'TA0009', 'techniqueName': 'Collection', 'tactics': [] },
-        { 'techniqueId': 'TA0011', 'techniqueName': 'Command and Control', 'tactics': [] },
+        // { 'techniqueId': 'TA0043', 'techniqueName': 'Reconnaissance', 'tactics': [], },
+        // { 'techniqueId': 'TA0042', 'techniqueName': 'Resource Development', 'tactics': [] },
+        // { 'techniqueId': 'TA0001', 'techniqueName': 'Initial Access', 'tactics': [] },
+        // { 'techniqueId': 'TA0002', 'techniqueName': 'Execution', 'tactics': [] },
+        // { 'techniqueId': 'TA0003', 'techniqueName': 'Persistence', 'tactics': [] },
+        // { 'techniqueId': 'TA0004', 'techniqueName': 'Privilege Escalation', 'tactics': [] },
+        // { 'techniqueId': 'TA0005', 'techniqueName': 'Defense Evasion', 'tactics': [] },
+        // { 'techniqueId': 'TA0006', 'techniqueName': 'Credential Access', 'tactics': [] },
+        // { 'techniqueId': 'TA0007', 'techniqueName': 'Discovery', 'tactics': [] },
+        // { 'techniqueId': 'TA0008', 'techniqueName': 'Lateral Movement', 'tactics': [] },
+        // { 'techniqueId': 'TA0009', 'techniqueName': 'Collection', 'tactics': [] },
+        // { 'techniqueId': 'TA0011', 'techniqueName': 'Command and Control', 'tactics': [] },
         { 'techniqueId': 'TA0010', 'techniqueName': 'Exfiltration', 'tactics': [] },
-        { 'techniqueId': 'TA0040', 'techniqueName': 'Impact', 'tactics': [] }];
+        // { 'techniqueId': 'TA0040', 'techniqueName': 'Impact', 'tactics': [] }
+    ];
 
 
     const fetchTactics = () => {
