@@ -86,11 +86,13 @@ const Home = () => {
                     techniques.map((technique) => (
                         <article key={technique.techniqueId} className="tilesContent">
                             <Link to={{
-                                
-                                pathname:`/technique/${technique.techniqueName}`,
-                                techniqueList:technique
-                                
-                            }}style={LinkStyle}>
+
+                                pathname: `/technique/${technique.techniqueName}`,
+                                state: {
+                                    "techniqueList": technique,
+                                }
+
+                            }} style={LinkStyle}>
                                 <p className='heading'>
                                     {technique.techniqueName}
                                 </p>
@@ -102,14 +104,28 @@ const Home = () => {
                                 {
                                     technique.tactics.slice(0, 5).map((item) => (
                                         <article key={item.tacticId}>
-                                            <Link to={`/technique/${technique.techniqueName}`} style={LinkStyle}>
+                                            <Link to={{
+
+                                                pathname: `/technique/${technique.techniqueName}`,
+                                                state: {
+                                                    "techniqueList": technique,
+                                                }
+
+                                            }} style={LinkStyle}>
                                                 <p className='tacticName'>{item.tacticName} </p>
                                             </Link>
 
                                         </article>
                                     ))
                                 }
-                                <Link to={`/technique/${technique.techniqueName}`} style={LinkStyle}>
+                                <Link to={{
+
+                                    pathname: `/technique/${technique.techniqueName}`,
+                                    state: {
+                                        "techniqueList": technique,
+                                    }
+
+                                }} style={LinkStyle}>
                                     <button className='seeMoreBtn' >See More</button>
                                 </Link>
                             </div>

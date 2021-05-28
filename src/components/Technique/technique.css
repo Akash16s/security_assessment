@@ -1,15 +1,21 @@
 .techniqueDetails{
-    text-align: center;
+    text-align: left;
 }
 
 .techniqueDetails > h2{
     font-size: 25px;
-    font-weight: bolder;
     padding: 5rem 5rem 0;
     text-align: left;
 }
 .techniqueDetails > h5{
-    font-weight: bolder;
+    font-size: 15px;
     text-align: left;
     color: rgb(44, 44, 44);
+    padding: 1rem 5rem;
+}
+.tacticsTable{
+    padding: 1rem;
+}
+.tr{
+    font-size: 14px;
 }
