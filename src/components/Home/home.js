@@ -6,11 +6,11 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 const Home = () => {
 
 
-        const saveTechniques=(techniques) =>{
+        const saveTechniques= async (techniques) =>{
             localStorage.setItem('techniques', JSON.stringify(techniques));
             setTechniques(techniques);
         }
-        const getTechniques=()=> {
+        const getTechniques= async ()=> {
             let items = JSON.parse(localStorage.getItem('techniques'));
             return items;
         }
@@ -32,14 +32,15 @@ const Home = () => {
         { 'techniqueId': 'TA0009', 'techniqueName': 'Collection', 'tactics': [] },
         { 'techniqueId': 'TA0011', 'techniqueName': 'Command and Control', 'tactics': [] },
         { 'techniqueId': 'TA0010', 'techniqueName': 'Exfiltration', 'tactics': [] },
-        { 'techniqueId': 'TA0040', 'techniqueName': 'Impact', 'tactics': [] }];
+        { 'techniqueId': 'TA0040', 'techniqueName': 'Impact', 'tactics': [] }
+    ];
 
 
-    const fetchTactics = () => {
+    const fetchTactics = async () => {
 
         console.log('fetchTacitc function called');
 
-        temp.forEach(async (technique) => {
+       await Promise.all(temp.map(async (technique) => {
 
             console.log('first for each called');
 
@@ -55,8 +56,8 @@ const Home = () => {
                     }
                 );
             });
-        });
-        setTimeout(function(){ saveTechniques(temp); }, 1000);
+        }));
+        await saveTechniques(temp)
         
     }
     useEffect(() => {
@@ -64,8 +65,9 @@ const Home = () => {
         fetchTactics();
         }
         else{
-        let data = getTechniques();
-        setTechniques(data);
+        getTechniques().then(async(data)=>{
+              setTechniques(data);
+            })
         }
     }, [])
 
