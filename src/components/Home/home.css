@@ -1,8 +1,41 @@
 .home{
     text-align: center;
-    padding: 2rem;
+    padding-bottom: 2rem;
 }
 .home > p{
     font-size: 30px;
     font-weight: bolder;
+    padding: 2rem;
+}
+.techniquesTiles{
+    text-align: center;
+    background-color: rgb(241, 241, 241);
+    width: 100vw;
+    margin: 0 auto;
+    max-width: 1370px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+    grid-column-gap: 3.5rem;
+    grid-row-gap: 3rem;
+    position: relative;
+}
+.tilesContent{
+    padding: 1rem;
+}
+.heading{
+    font-size: 15px;
+    font-weight: bolder;
+}
+.subtitle{
+    font-size: 12px;
+    padding: 0.5rem 0;
+}
+.tactics{
+    display: flex;
+    height: 10rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: rgb(228, 228, 228);
+    border-radius: 10px;
+    padding: 1rem;
 }
