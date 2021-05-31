@@ -57,7 +57,8 @@ const Home = () => {
                     {
                         "tacticPrimeName": item.data().primeName,
                         "tacticName": item.data().name,
-                        "tacticId": item.data().id
+                        "tacticId": item.data().id,
+                        "severityLevel": item.data().severityLevel
                     }
                 );
             });

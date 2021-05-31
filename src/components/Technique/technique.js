@@ -13,12 +13,12 @@ const TechniqueDetails = (props) => {
         return items;
     }
 
-    const handleSwitches = async (id,level)=>{
+    const handleSwitches = async (id, level) => {
         const localData = await getTechniques();
-        let techniqueArray = localData.filter( function (t){
+        let techniqueArray = localData.filter(function (t) {
             return t.techniqueId === props.location.state.techniqueList['techniqueId'];
         });
-        let tacticArray = techniqueArray[0].tactics.filter( function (t){
+        let tacticArray = techniqueArray[0].tactics.filter(function (t) {
             return t.tacticId === id;
         });
         tacticArray[0].severityLevel = level;
@@ -58,29 +58,32 @@ const TechniqueDetails = (props) => {
                                     <td>{item.tacticPrimeName}</td>
                                     <td>{
                                         <div>
-                                             <Form.Check
+                                            <Form.Check
                                                 type="switch"
                                                 id={v4()}
                                                 toggle
                                                 inline
+                                                checked={item.severityLevel === 'Low' ? true : false}
                                                 label="Low"
-                                                onChange={()=>handleSwitches(item.tacticId,'Low')}
+                                                onChange={() => handleSwitches(item.tacticId, 'Low')}
                                             />
-                                             <Form.Check
+                                            <Form.Check
                                                 type="switch"
                                                 id={v4()}
                                                 toggle
+                                                checked={item.severityLevel === 'Medium' ? true : false}
                                                 inline
                                                 label="Medium"
-                                                onChange={()=>handleSwitches(item.tacticId,'Medium')}
+                                                onChange={() => handleSwitches(item.tacticId, 'Medium')}
                                             />
                                             <Form.Check
                                                 type="switch"
                                                 id={v4()}
                                                 toggle
                                                 inline
+                                                checked={item.severityLevel === 'High' ? true : false}
                                                 label="High"
-                                                onChange={()=>handleSwitches(item.tacticId,'High')}
+                                                onChange={() => handleSwitches(item.tacticId, 'High')}
                                             />
                                         </div>
                                     }</td>
