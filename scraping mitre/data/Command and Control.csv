@@ -1,0 +1,676 @@
+Tactic Id,Tactic Name
+T1595,Active Scanning
+.001,Scanning IP Blocks
+.002,Vulnerability Scanning
+T1592,Gather Victim Host Information
+.001,Hardware
+.002,Software
+.003,Firmware
+.004,Client Configurations
+T1589,Gather Victim Identity Information
+.001,Credentials
+.002,Email Addresses
+.003,Employee Names
+T1590,Gather Victim Network Information
+.001,Domain Properties
+.002,DNS
+.003,Network Trust Dependencies
+.004,Network Topology
+.005,IP Addresses
+.006,Network Security Appliances
+T1591,Gather Victim Org Information
+.001,Determine Physical Locations
+.002,Business Relationships
+.003,Identify Business Tempo
+.004,Identify Roles
+T1598,Phishing for Information
+.001,Spearphishing Service
+.002,Spearphishing Attachment
+.003,Spearphishing Link
+T1597,Search Closed Sources
+.001,Threat Intel Vendors
+.002,Purchase Technical Data
+T1596,Search Open Technical Databases
+.001,DNS/Passive DNS
+.002,WHOIS
+.003,Digital Certificates
+.004,CDNs
+.005,Scan Databases
+T1593,Search Open Websites/Domains
+.001,Social Media
+.002,Search Engines
+T1594,Search Victim-Owned Websites
+T1583,Acquire Infrastructure
+.001,Domains
+.002,DNS Server
+.003,Virtual Private Server
+.004,Server
+.005,Botnet
+.006,Web Services
+T1586,Compromise Accounts
+.001,Social Media Accounts
+.002,Email Accounts
+T1584,Compromise Infrastructure
+.001,Domains
+.002,DNS Server
+.003,Virtual Private Server
+.004,Server
+.005,Botnet
+.006,Web Services
+T1587,Develop Capabilities
+.001,Malware
+.002,Code Signing Certificates
+.003,Digital Certificates
+.004,Exploits
+T1585,Establish Accounts
+.001,Social Media Accounts
+.002,Email Accounts
+T1588,Obtain Capabilities
+.001,Malware
+.002,Tool
+.003,Code Signing Certificates
+.004,Digital Certificates
+.005,Exploits
+.006,Vulnerabilities
+T1608,Stage Capabilities
+.001,Upload Malware
+.002,Upload Tool
+.003,Install Digital Certificate
+.004,Drive-by Target
+.005,Link Target
+T1189,Drive-by Compromise
+T1190,Exploit Public-Facing Application
+T1133,External Remote Services
+T1200,Hardware Additions
+T1566,Phishing
+.001,Spearphishing Attachment
+.002,Spearphishing Link
+.003,Spearphishing via Service
+T1091,Replication Through Removable Media
+T1195,Supply Chain Compromise
+.001,Compromise Software Dependencies and Development Tools
+.002,Compromise Software Supply Chain
+.003,Compromise Hardware Supply Chain
+T1199,Trusted Relationship
+T1078,Valid Accounts
+.001,Default Accounts
+.002,Domain Accounts
+.003,Local Accounts
+.004,Cloud Accounts
+T1059,Command and Scripting Interpreter
+.001,PowerShell
+.002,AppleScript
+.003,Windows Command Shell
+.004,Unix Shell
+.005,Visual Basic
+.006,Python
+.007,JavaScript
+.008,Network Device CLI
+T1609,Container Administration Command
+T1610,Deploy Container
+T1203,Exploitation for Client Execution
+T1559,Inter-Process Communication
+.001,Component Object Model
+.002,Dynamic Data Exchange
+T1106,Native API
+T1053,Scheduled Task/Job
+.001,At (Linux)
+.002,At (Windows)
+.003,Cron
+.004,Launchd
+.005,Scheduled Task
+.006,Systemd Timers
+.007,Container Orchestration Job
+T1129,Shared Modules
+T1072,Software Deployment Tools
+T1569,System Services
+.001,Launchctl
+.002,Service Execution
+T1204,User Execution
+.001,Malicious Link
+.002,Malicious File
+.003,Malicious Image
+T1047,Windows Management Instrumentation
+T1098,Account Manipulation
+.001,Additional Cloud Credentials
+.002,Exchange Email Delegate Permissions
+.003,Add Office 365 Global Administrator Role
+.004,SSH Authorized Keys
+T1197,BITS Jobs
+T1547,Boot or Logon Autostart Execution
+.001,Registry Run Keys / Startup Folder
+.002,Authentication Package
+.003,Time Providers
+.004,Winlogon Helper DLL
+.005,Security Support Provider
+.006,Kernel Modules and Extensions
+.007,Re-opened Applications
+.008,LSASS Driver
+.009,Shortcut Modification
+.010,Port Monitors
+.011,Plist Modification
+.012,Print Processors
+.013,XDG Autostart Entries
+.014,Active Setup
+T1037,Boot or Logon Initialization Scripts
+.001,Logon Script (Windows)
+.002,Logon Script (Mac)
+.003,Network Logon Script
+.004,RC Scripts
+.005,Startup Items
+T1176,Browser Extensions
+T1554,Compromise Client Software Binary
+T1136,Create Account
+.001,Local Account
+.002,Domain Account
+.003,Cloud Account
+T1543,Create or Modify System Process
+.001,Launch Agent
+.002,Systemd Service
+.003,Windows Service
+.004,Launch Daemon
+T1546,Event Triggered Execution
+.001,Change Default File Association
+.002,Screensaver
+.003,Windows Management Instrumentation Event Subscription
+.004,Unix Shell Configuration Modification
+.005,Trap
+.006,LC_LOAD_DYLIB Addition
+.007,Netsh Helper DLL
+.008,Accessibility Features
+.009,AppCert DLLs
+.010,AppInit DLLs
+.011,Application Shimming
+.012,Image File Execution Options Injection
+.013,PowerShell Profile
+.014,Emond
+.015,Component Object Model Hijacking
+T1133,External Remote Services
+T1574,Hijack Execution Flow
+.001,DLL Search Order Hijacking
+.002,DLL Side-Loading
+.004,Dylib Hijacking
+.005,Executable Installer File Permissions Weakness
+.006,Dynamic Linker Hijacking
+.007,Path Interception by PATH Environment Variable
+.008,Path Interception by Search Order Hijacking
+.009,Path Interception by Unquoted Path
+.010,Services File Permissions Weakness
+.011,Services Registry Permissions Weakness
+.012,COR_PROFILER
+T1525,Implant Internal Image
+T1556,Modify Authentication Process
+.001,Domain Controller Authentication
+.002,Password Filter DLL
+.003,Pluggable Authentication Modules
+.004,Network Device Authentication
+T1137,Office Application Startup
+.001,Office Template Macros
+.002,Office Test
+.003,Outlook Forms
+.004,Outlook Home Page
+.005,Outlook Rules
+.006,Add-ins
+T1542,Pre-OS Boot
+.001,System Firmware
+.002,Component Firmware
+.003,Bootkit
+.004,ROMMONkit
+.005,TFTP Boot
+T1053,Scheduled Task/Job
+.001,At (Linux)
+.002,At (Windows)
+.003,Cron
+.004,Launchd
+.005,Scheduled Task
+.006,Systemd Timers
+.007,Container Orchestration Job
+T1505,Server Software Component
+.001,SQL Stored Procedures
+.002,Transport Agent
+.003,Web Shell
+T1205,Traffic Signaling
+.001,Port Knocking
+T1078,Valid Accounts
+.001,Default Accounts
+.002,Domain Accounts
+.003,Local Accounts
+.004,Cloud Accounts
+T1548,Abuse Elevation Control Mechanism
+.001,Setuid and Setgid
+.002,Bypass User Account Control
+.003,Sudo and Sudo Caching
+.004,Elevated Execution with Prompt
+T1134,Access Token Manipulation
+.001,Token Impersonation/Theft
+.002,Create Process with Token
+.003,Make and Impersonate Token
+.004,Parent PID Spoofing
+.005,SID-History Injection
+T1547,Boot or Logon Autostart Execution
+.001,Registry Run Keys / Startup Folder
+.002,Authentication Package
+.003,Time Providers
+.004,Winlogon Helper DLL
+.005,Security Support Provider
+.006,Kernel Modules and Extensions
+.007,Re-opened Applications
+.008,LSASS Driver
+.009,Shortcut Modification
+.010,Port Monitors
+.011,Plist Modification
+.012,Print Processors
+.013,XDG Autostart Entries
+.014,Active Setup
+T1037,Boot or Logon Initialization Scripts
+.001,Logon Script (Windows)
+.002,Logon Script (Mac)
+.003,Network Logon Script
+.004,RC Scripts
+.005,Startup Items
+T1543,Create or Modify System Process
+.001,Launch Agent
+.002,Systemd Service
+.003,Windows Service
+.004,Launch Daemon
+T1484,Domain Policy Modification
+.001,Group Policy Modification
+.002,Domain Trust Modification
+T1611,Escape to Host
+T1546,Event Triggered Execution
+.001,Change Default File Association
+.002,Screensaver
+.003,Windows Management Instrumentation Event Subscription
+.004,Unix Shell Configuration Modification
+.005,Trap
+.006,LC_LOAD_DYLIB Addition
+.007,Netsh Helper DLL
+.008,Accessibility Features
+.009,AppCert DLLs
+.010,AppInit DLLs
+.011,Application Shimming
+.012,Image File Execution Options Injection
+.013,PowerShell Profile
+.014,Emond
+.015,Component Object Model Hijacking
+T1068,Exploitation for Privilege Escalation
+T1574,Hijack Execution Flow
+.001,DLL Search Order Hijacking
+.002,DLL Side-Loading
+.004,Dylib Hijacking
+.005,Executable Installer File Permissions Weakness
+.006,Dynamic Linker Hijacking
+.007,Path Interception by PATH Environment Variable
+.008,Path Interception by Search Order Hijacking
+.009,Path Interception by Unquoted Path
+.010,Services File Permissions Weakness
+.011,Services Registry Permissions Weakness
+.012,COR_PROFILER
+T1055,Process Injection
+.001,Dynamic-link Library Injection
+.002,Portable Executable Injection
+.003,Thread Execution Hijacking
+.004,Asynchronous Procedure Call
+.005,Thread Local Storage
+.008,Ptrace System Calls
+.009,Proc Memory
+.011,Extra Window Memory Injection
+.012,Process Hollowing
+.013,Process Doppelgänging
+.014,VDSO Hijacking
+T1053,Scheduled Task/Job
+.001,At (Linux)
+.002,At (Windows)
+.003,Cron
+.004,Launchd
+.005,Scheduled Task
+.006,Systemd Timers
+.007,Container Orchestration Job
+T1078,Valid Accounts
+.001,Default Accounts
+.002,Domain Accounts
+.003,Local Accounts
+.004,Cloud Accounts
+T1548,Abuse Elevation Control Mechanism
+.001,Setuid and Setgid
+.002,Bypass User Account Control
+.003,Sudo and Sudo Caching
+.004,Elevated Execution with Prompt
+T1134,Access Token Manipulation
+.001,Token Impersonation/Theft
+.002,Create Process with Token
+.003,Make and Impersonate Token
+.004,Parent PID Spoofing
+.005,SID-History Injection
+T1197,BITS Jobs
+T1612,Build Image on Host
+T1140,Deobfuscate/Decode Files or Information
+T1610,Deploy Container
+T1006,Direct Volume Access
+T1484,Domain Policy Modification
+.001,Group Policy Modification
+.002,Domain Trust Modification
+T1480,Execution Guardrails
+.001,Environmental Keying
+T1211,Exploitation for Defense Evasion
+T1222,File and Directory Permissions Modification
+.001,Windows File and Directory Permissions Modification
+.002,Linux and Mac File and Directory Permissions Modification
+T1564,Hide Artifacts
+.001,Hidden Files and Directories
+.002,Hidden Users
+.003,Hidden Window
+.004,NTFS File Attributes
+.005,Hidden File System
+.006,Run Virtual Instance
+.007,VBA Stomping
+T1574,Hijack Execution Flow
+.001,DLL Search Order Hijacking
+.002,DLL Side-Loading
+.004,Dylib Hijacking
+.005,Executable Installer File Permissions Weakness
+.006,Dynamic Linker Hijacking
+.007,Path Interception by PATH Environment Variable
+.008,Path Interception by Search Order Hijacking
+.009,Path Interception by Unquoted Path
+.010,Services File Permissions Weakness
+.011,Services Registry Permissions Weakness
+.012,COR_PROFILER
+T1562,Impair Defenses
+.001,Disable or Modify Tools
+.002,Disable Windows Event Logging
+.003,Impair Command History Logging
+.004,Disable or Modify System Firewall
+.006,Indicator Blocking
+.007,Disable or Modify Cloud Firewall
+.008,Disable Cloud Logs
+T1070,Indicator Removal on Host
+.001,Clear Windows Event Logs
+.002,Clear Linux or Mac System Logs
+.003,Clear Command History
+.004,File Deletion
+.005,Network Share Connection Removal
+.006,Timestomp
+T1202,Indirect Command Execution
+T1036,Masquerading
+.001,Invalid Code Signature
+.002,Right-to-Left Override
+.003,Rename System Utilities
+.004,Masquerade Task or Service
+.005,Match Legitimate Name or Location
+.006,Space after Filename
+T1556,Modify Authentication Process
+.001,Domain Controller Authentication
+.002,Password Filter DLL
+.003,Pluggable Authentication Modules
+.004,Network Device Authentication
+T1578,Modify Cloud Compute Infrastructure
+.001,Create Snapshot
+.002,Create Cloud Instance
+.003,Delete Cloud Instance
+.004,Revert Cloud Instance
+T1112,Modify Registry
+T1601,Modify System Image
+.001,Patch System Image
+.002,Downgrade System Image
+T1599,Network Boundary Bridging
+.001,Network Address Translation Traversal
+T1027,Obfuscated Files or Information
+.001,Binary Padding
+.002,Software Packing
+.003,Steganography
+.004,Compile After Delivery
+.005,Indicator Removal from Tools
+T1542,Pre-OS Boot
+.001,System Firmware
+.002,Component Firmware
+.003,Bootkit
+.004,ROMMONkit
+.005,TFTP Boot
+T1055,Process Injection
+.001,Dynamic-link Library Injection
+.002,Portable Executable Injection
+.003,Thread Execution Hijacking
+.004,Asynchronous Procedure Call
+.005,Thread Local Storage
+.008,Ptrace System Calls
+.009,Proc Memory
+.011,Extra Window Memory Injection
+.012,Process Hollowing
+.013,Process Doppelgänging
+.014,VDSO Hijacking
+T1207,Rogue Domain Controller
+T1014,Rootkit
+T1218,Signed Binary Proxy Execution
+.001,Compiled HTML File
+.002,Control Panel
+.003,CMSTP
+.004,InstallUtil
+.005,Mshta
+.007,Msiexec
+.008,Odbcconf
+.009,Regsvcs/Regasm
+.010,Regsvr32
+.011,Rundll32
+.012,Verclsid
+T1216,Signed Script Proxy Execution
+.001,PubPrn
+T1553,Subvert Trust Controls
+.001,Gatekeeper Bypass
+.002,Code Signing
+.003,SIP and Trust Provider Hijacking
+.004,Install Root Certificate
+.005,Mark-of-the-Web Bypass
+.006,Code Signing Policy Modification
+T1221,Template Injection
+T1205,Traffic Signaling
+.001,Port Knocking
+T1127,Trusted Developer Utilities Proxy Execution
+.001,MSBuild
+T1535,Unused/Unsupported Cloud Regions
+T1550,Use Alternate Authentication Material
+.001,Application Access Token
+.002,Pass the Hash
+.003,Pass the Ticket
+.004,Web Session Cookie
+T1078,Valid Accounts
+.001,Default Accounts
+.002,Domain Accounts
+.003,Local Accounts
+.004,Cloud Accounts
+T1497,Virtualization/Sandbox Evasion
+.001,System Checks
+.002,User Activity Based Checks
+.003,Time Based Evasion
+T1600,Weaken Encryption
+.001,Reduce Key Space
+.002,Disable Crypto Hardware
+T1220,XSL Script Processing
+T1110,Brute Force
+.001,Password Guessing
+.002,Password Cracking
+.003,Password Spraying
+.004,Credential Stuffing
+T1555,Credentials from Password Stores
+.001,Keychain
+.002,Securityd Memory
+.003,Credentials from Web Browsers
+.004,Windows Credential Manager
+.005,Password Managers
+T1212,Exploitation for Credential Access
+T1187,Forced Authentication
+T1606,Forge Web Credentials
+.001,Web Cookies
+.002,SAML Tokens
+T1056,Input Capture
+.001,Keylogging
+.002,GUI Input Capture
+.003,Web Portal Capture
+.004,Credential API Hooking
+T1557,Man-in-the-Middle
+.001,LLMNR/NBT-NS Poisoning and SMB Relay
+.002,ARP Cache Poisoning
+T1556,Modify Authentication Process
+.001,Domain Controller Authentication
+.002,Password Filter DLL
+.003,Pluggable Authentication Modules
+.004,Network Device Authentication
+T1040,Network Sniffing
+T1003,OS Credential Dumping
+.001,LSASS Memory
+.002,Security Account Manager
+.003,NTDS
+.004,LSA Secrets
+.005,Cached Domain Credentials
+.006,DCSync
+.007,Proc Filesystem
+.008,/etc/passwd and /etc/shadow
+T1528,Steal Application Access Token
+T1558,Steal or Forge Kerberos Tickets
+.001,Golden Ticket
+.002,Silver Ticket
+.003,Kerberoasting
+.004,AS-REP Roasting
+T1539,Steal Web Session Cookie
+T1111,Two-Factor Authentication Interception
+T1552,Unsecured Credentials
+.001,Credentials In Files
+.002,Credentials in Registry
+.003,Bash History
+.004,Private Keys
+.005,Cloud Instance Metadata API
+.006,Group Policy Preferences
+.007,Container API
+T1087,Account Discovery
+.001,Local Account
+.002,Domain Account
+.003,Email Account
+.004,Cloud Account
+T1010,Application Window Discovery
+T1217,Browser Bookmark Discovery
+T1580,Cloud Infrastructure Discovery
+T1538,Cloud Service Dashboard
+T1526,Cloud Service Discovery
+T1613,Container and Resource Discovery
+T1482,Domain Trust Discovery
+T1083,File and Directory Discovery
+T1046,Network Service Scanning
+T1135,Network Share Discovery
+T1040,Network Sniffing
+T1201,Password Policy Discovery
+T1120,Peripheral Device Discovery
+T1069,Permission Groups Discovery
+.001,Local Groups
+.002,Domain Groups
+.003,Cloud Groups
+T1057,Process Discovery
+T1012,Query Registry
+T1018,Remote System Discovery
+T1518,Software Discovery
+.001,Security Software Discovery
+T1082,System Information Discovery
+T1614,System Location Discovery
+T1016,System Network Configuration Discovery
+.001,Internet Connection Discovery
+T1049,System Network Connections Discovery
+T1033,System Owner/User Discovery
+T1007,System Service Discovery
+T1124,System Time Discovery
+T1497,Virtualization/Sandbox Evasion
+.001,System Checks
+.002,User Activity Based Checks
+.003,Time Based Evasion
+T1210,Exploitation of Remote Services
+T1534,Internal Spearphishing
+T1570,Lateral Tool Transfer
+T1563,Remote Service Session Hijacking
+.001,SSH Hijacking
+.002,RDP Hijacking
+T1021,Remote Services
+.001,Remote Desktop Protocol
+.002,SMB/Windows Admin Shares
+.003,Distributed Component Object Model
+.004,SSH
+.005,VNC
+.006,Windows Remote Management
+T1091,Replication Through Removable Media
+T1072,Software Deployment Tools
+T1080,Taint Shared Content
+T1550,Use Alternate Authentication Material
+.001,Application Access Token
+.002,Pass the Hash
+.003,Pass the Ticket
+.004,Web Session Cookie
+T1560,Archive Collected Data
+.001,Archive via Utility
+.002,Archive via Library
+.003,Archive via Custom Method
+T1123,Audio Capture
+T1119,Automated Collection
+T1115,Clipboard Data
+T1530,Data from Cloud Storage Object
+T1602,Data from Configuration Repository
+.001,SNMP (MIB Dump)
+.002,Network Device Configuration Dump
+T1213,Data from Information Repositories
+.001,Confluence
+.002,Sharepoint
+T1005,Data from Local System
+T1039,Data from Network Shared Drive
+T1025,Data from Removable Media
+T1074,Data Staged
+.001,Local Data Staging
+.002,Remote Data Staging
+T1114,Email Collection
+.001,Local Email Collection
+.002,Remote Email Collection
+.003,Email Forwarding Rule
+T1056,Input Capture
+.001,Keylogging
+.002,GUI Input Capture
+.003,Web Portal Capture
+.004,Credential API Hooking
+T1185,Man in the Browser
+T1557,Man-in-the-Middle
+.001,LLMNR/NBT-NS Poisoning and SMB Relay
+.002,ARP Cache Poisoning
+T1113,Screen Capture
+T1125,Video Capture
+T1071,Application Layer Protocol
+.001,Web Protocols
+.002,File Transfer Protocols
+.003,Mail Protocols
+.004,DNS
+T1092,Communication Through Removable Media
+T1132,Data Encoding
+.001,Standard Encoding
+.002,Non-Standard Encoding
+T1001,Data Obfuscation
+.001,Junk Data
+.002,Steganography
+.003,Protocol Impersonation
+T1568,Dynamic Resolution
+.001,Fast Flux DNS
+.002,Domain Generation Algorithms
+.003,DNS Calculation
+T1573,Encrypted Channel
+.001,Symmetric Cryptography
+.002,Asymmetric Cryptography
+T1008,Fallback Channels
+T1105,Ingress Tool Transfer
+T1104,Multi-Stage Channels
+T1095,Non-Application Layer Protocol
+T1571,Non-Standard Port
+T1572,Protocol Tunneling
+T1090,Proxy
+.001,Internal Proxy
+.002,External Proxy
+.003,Multi-hop Proxy
+.004,Domain Fronting
+T1219,Remote Access Software
+T1205,Traffic Signaling
+.001,Port Knocking
+T1102,Web Service
+.001,Dead Drop Resolver
+.002,Bidirectional Communication
+.003,One-Way Communication
