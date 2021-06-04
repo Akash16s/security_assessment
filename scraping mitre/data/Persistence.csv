@@ -1,0 +1,238 @@
+Tactic Id,Tactic Name
+T1595,Active Scanning
+.001,Scanning IP Blocks
+.002,Vulnerability Scanning
+T1592,Gather Victim Host Information
+.001,Hardware
+.002,Software
+.003,Firmware
+.004,Client Configurations
+T1589,Gather Victim Identity Information
+.001,Credentials
+.002,Email Addresses
+.003,Employee Names
+T1590,Gather Victim Network Information
+.001,Domain Properties
+.002,DNS
+.003,Network Trust Dependencies
+.004,Network Topology
+.005,IP Addresses
+.006,Network Security Appliances
+T1591,Gather Victim Org Information
+.001,Determine Physical Locations
+.002,Business Relationships
+.003,Identify Business Tempo
+.004,Identify Roles
+T1598,Phishing for Information
+.001,Spearphishing Service
+.002,Spearphishing Attachment
+.003,Spearphishing Link
+T1597,Search Closed Sources
+.001,Threat Intel Vendors
+.002,Purchase Technical Data
+T1596,Search Open Technical Databases
+.001,DNS/Passive DNS
+.002,WHOIS
+.003,Digital Certificates
+.004,CDNs
+.005,Scan Databases
+T1593,Search Open Websites/Domains
+.001,Social Media
+.002,Search Engines
+T1594,Search Victim-Owned Websites
+T1583,Acquire Infrastructure
+.001,Domains
+.002,DNS Server
+.003,Virtual Private Server
+.004,Server
+.005,Botnet
+.006,Web Services
+T1586,Compromise Accounts
+.001,Social Media Accounts
+.002,Email Accounts
+T1584,Compromise Infrastructure
+.001,Domains
+.002,DNS Server
+.003,Virtual Private Server
+.004,Server
+.005,Botnet
+.006,Web Services
+T1587,Develop Capabilities
+.001,Malware
+.002,Code Signing Certificates
+.003,Digital Certificates
+.004,Exploits
+T1585,Establish Accounts
+.001,Social Media Accounts
+.002,Email Accounts
+T1588,Obtain Capabilities
+.001,Malware
+.002,Tool
+.003,Code Signing Certificates
+.004,Digital Certificates
+.005,Exploits
+.006,Vulnerabilities
+T1608,Stage Capabilities
+.001,Upload Malware
+.002,Upload Tool
+.003,Install Digital Certificate
+.004,Drive-by Target
+.005,Link Target
+T1189,Drive-by Compromise
+T1190,Exploit Public-Facing Application
+T1133,External Remote Services
+T1200,Hardware Additions
+T1566,Phishing
+.001,Spearphishing Attachment
+.002,Spearphishing Link
+.003,Spearphishing via Service
+T1091,Replication Through Removable Media
+T1195,Supply Chain Compromise
+.001,Compromise Software Dependencies and Development Tools
+.002,Compromise Software Supply Chain
+.003,Compromise Hardware Supply Chain
+T1199,Trusted Relationship
+T1078,Valid Accounts
+.001,Default Accounts
+.002,Domain Accounts
+.003,Local Accounts
+.004,Cloud Accounts
+T1059,Command and Scripting Interpreter
+.001,PowerShell
+.002,AppleScript
+.003,Windows Command Shell
+.004,Unix Shell
+.005,Visual Basic
+.006,Python
+.007,JavaScript
+.008,Network Device CLI
+T1609,Container Administration Command
+T1610,Deploy Container
+T1203,Exploitation for Client Execution
+T1559,Inter-Process Communication
+.001,Component Object Model
+.002,Dynamic Data Exchange
+T1106,Native API
+T1053,Scheduled Task/Job
+.001,At (Linux)
+.002,At (Windows)
+.003,Cron
+.004,Launchd
+.005,Scheduled Task
+.006,Systemd Timers
+.007,Container Orchestration Job
+T1129,Shared Modules
+T1072,Software Deployment Tools
+T1569,System Services
+.001,Launchctl
+.002,Service Execution
+T1204,User Execution
+.001,Malicious Link
+.002,Malicious File
+.003,Malicious Image
+T1047,Windows Management Instrumentation
+T1098,Account Manipulation
+.001,Additional Cloud Credentials
+.002,Exchange Email Delegate Permissions
+.003,Add Office 365 Global Administrator Role
+.004,SSH Authorized Keys
+T1197,BITS Jobs
+T1547,Boot or Logon Autostart Execution
+.001,Registry Run Keys / Startup Folder
+.002,Authentication Package
+.003,Time Providers
+.004,Winlogon Helper DLL
+.005,Security Support Provider
+.006,Kernel Modules and Extensions
+.007,Re-opened Applications
+.008,LSASS Driver
+.009,Shortcut Modification
+.010,Port Monitors
+.011,Plist Modification
+.012,Print Processors
+.013,XDG Autostart Entries
+.014,Active Setup
+T1037,Boot or Logon Initialization Scripts
+.001,Logon Script (Windows)
+.002,Logon Script (Mac)
+.003,Network Logon Script
+.004,RC Scripts
+.005,Startup Items
+T1176,Browser Extensions
+T1554,Compromise Client Software Binary
+T1136,Create Account
+.001,Local Account
+.002,Domain Account
+.003,Cloud Account
+T1543,Create or Modify System Process
+.001,Launch Agent
+.002,Systemd Service
+.003,Windows Service
+.004,Launch Daemon
+T1546,Event Triggered Execution
+.001,Change Default File Association
+.002,Screensaver
+.003,Windows Management Instrumentation Event Subscription
+.004,Unix Shell Configuration Modification
+.005,Trap
+.006,LC_LOAD_DYLIB Addition
+.007,Netsh Helper DLL
+.008,Accessibility Features
+.009,AppCert DLLs
+.010,AppInit DLLs
+.011,Application Shimming
+.012,Image File Execution Options Injection
+.013,PowerShell Profile
+.014,Emond
+.015,Component Object Model Hijacking
+T1133,External Remote Services
+T1574,Hijack Execution Flow
+.001,DLL Search Order Hijacking
+.002,DLL Side-Loading
+.004,Dylib Hijacking
+.005,Executable Installer File Permissions Weakness
+.006,Dynamic Linker Hijacking
+.007,Path Interception by PATH Environment Variable
+.008,Path Interception by Search Order Hijacking
+.009,Path Interception by Unquoted Path
+.010,Services File Permissions Weakness
+.011,Services Registry Permissions Weakness
+.012,COR_PROFILER
+T1525,Implant Internal Image
+T1556,Modify Authentication Process
+.001,Domain Controller Authentication
+.002,Password Filter DLL
+.003,Pluggable Authentication Modules
+.004,Network Device Authentication
+T1137,Office Application Startup
+.001,Office Template Macros
+.002,Office Test
+.003,Outlook Forms
+.004,Outlook Home Page
+.005,Outlook Rules
+.006,Add-ins
+T1542,Pre-OS Boot
+.001,System Firmware
+.002,Component Firmware
+.003,Bootkit
+.004,ROMMONkit
+.005,TFTP Boot
+T1053,Scheduled Task/Job
+.001,At (Linux)
+.002,At (Windows)
+.003,Cron
+.004,Launchd
+.005,Scheduled Task
+.006,Systemd Timers
+.007,Container Orchestration Job
+T1505,Server Software Component
+.001,SQL Stored Procedures
+.002,Transport Agent
+.003,Web Shell
+T1205,Traffic Signaling
+.001,Port Knocking
+T1078,Valid Accounts
+.001,Default Accounts
+.002,Domain Accounts
+.003,Local Accounts
+.004,Cloud Accounts

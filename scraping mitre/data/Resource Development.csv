@@ -1,0 +1,80 @@
+Tactic Id,Tactic Name
+T1595,Active Scanning
+.001,Scanning IP Blocks
+.002,Vulnerability Scanning
+T1592,Gather Victim Host Information
+.001,Hardware
+.002,Software
+.003,Firmware
+.004,Client Configurations
+T1589,Gather Victim Identity Information
+.001,Credentials
+.002,Email Addresses
+.003,Employee Names
+T1590,Gather Victim Network Information
+.001,Domain Properties
+.002,DNS
+.003,Network Trust Dependencies
+.004,Network Topology
+.005,IP Addresses
+.006,Network Security Appliances
+T1591,Gather Victim Org Information
+.001,Determine Physical Locations
+.002,Business Relationships
+.003,Identify Business Tempo
+.004,Identify Roles
+T1598,Phishing for Information
+.001,Spearphishing Service
+.002,Spearphishing Attachment
+.003,Spearphishing Link
+T1597,Search Closed Sources
+.001,Threat Intel Vendors
+.002,Purchase Technical Data
+T1596,Search Open Technical Databases
+.001,DNS/Passive DNS
+.002,WHOIS
+.003,Digital Certificates
+.004,CDNs
+.005,Scan Databases
+T1593,Search Open Websites/Domains
+.001,Social Media
+.002,Search Engines
+T1594,Search Victim-Owned Websites
+T1583,Acquire Infrastructure
+.001,Domains
+.002,DNS Server
+.003,Virtual Private Server
+.004,Server
+.005,Botnet
+.006,Web Services
+T1586,Compromise Accounts
+.001,Social Media Accounts
+.002,Email Accounts
+T1584,Compromise Infrastructure
+.001,Domains
+.002,DNS Server
+.003,Virtual Private Server
+.004,Server
+.005,Botnet
+.006,Web Services
+T1587,Develop Capabilities
+.001,Malware
+.002,Code Signing Certificates
+.003,Digital Certificates
+.004,Exploits
+T1585,Establish Accounts
+.001,Social Media Accounts
+.002,Email Accounts
+T1588,Obtain Capabilities
+.001,Malware
+.002,Tool
+.003,Code Signing Certificates
+.004,Digital Certificates
+.005,Exploits
+.006,Vulnerabilities
+T1608,Stage Capabilities
+.001,Upload Malware
+.002,Upload Tool
+.003,Install Digital Certificate
+.004,Drive-by Target
+.005,Link Target
