@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './home.css';
 import { firestore } from '../../Firebase/Firebase';
 import { Link } from 'react-router-dom';
-// import DropdownButton from 'react-bootstrap/DropdownButton';    
-
-
 
 const Home = () => {
 
@@ -25,8 +22,8 @@ const Home = () => {
     const [techniques, setTechniques] = useState([]);
 
     const temp = [
-        { 'techniqueId': 'TA0043', 'techniqueName': 'Reconnaissance', 'tactics': [], },
-        { 'techniqueId': 'TA0042', 'techniqueName': 'Resource Development', 'tactics': [] },
+        // { 'techniqueId': 'TA0043', 'techniqueName': 'Reconnaissance', 'tactics': [], },
+        // { 'techniqueId': 'TA0042', 'techniqueName': 'Resource Development', 'tactics': [] },
         { 'techniqueId': 'TA0001', 'techniqueName': 'Initial Access', 'tactics': [] },
         { 'techniqueId': 'TA0002', 'techniqueName': 'Execution', 'tactics': [] },
         { 'techniqueId': 'TA0003', 'techniqueName': 'Persistence', 'tactics': [] },
@@ -38,7 +35,7 @@ const Home = () => {
         { 'techniqueId': 'TA0009', 'techniqueName': 'Collection', 'tactics': [] },
         { 'techniqueId': 'TA0011', 'techniqueName': 'Command and Control', 'tactics': [] },
         { 'techniqueId': 'TA0010', 'techniqueName': 'Exfiltration', 'tactics': [] },
-        { 'techniqueId': 'TA0040', 'techniqueName': 'Impact', 'tactics': [] }
+        // { 'techniqueId': 'TA0040', 'techniqueName': 'Impact', 'tactics': [] }
     ];
 
     const fetchTactics = async () => {
@@ -82,6 +79,10 @@ const Home = () => {
             <p>
                 Security Assesment
             </p>
+            <Link to='/calculateMyScore' style={LinkStyle}>
+                <button className='seeMoreBtn' >Calculate Your Score</button>
+            </Link>
+            <h3>Techniques Matrix:</h3>
             <section className='techniquesTiles'>
                 {
                     techniques.map((technique) => (
@@ -100,7 +101,7 @@ const Home = () => {
                             </Link>
                             <p className='subtitle'>
                                 {technique.tactics.length} techniques
-                        </p>
+                            </p>
                             <div className='tactics'>
                                 {
                                     technique.tactics.slice(0, 5).map((item) => (

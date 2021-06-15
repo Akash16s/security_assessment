@@ -1,0 +1,35 @@
+.techniqueName{
+    background-color: #1487b1;
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    margin: 0.2rem;
+    border-radius: 5px;
+    padding: 0.5rem;
+    
+}
+.techniqueName:hover{
+    cursor: pointer;
+}
+
+.tacticsList{
+    display: flex;
+    justify-content: space-between;
+}
+.tactic{
+    max-height: 30vh;
+    transition: all 0.25s ease-in;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    background-color: white;
+}
+.tactic::-webkit-scrollbar {
+    width: 5px;
+  }
+    
+.tactic::-webkit-scrollbar-thumb {
+    background-color: #1487b1;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+  }
