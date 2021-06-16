@@ -12,7 +12,7 @@
     text-align: center;
     width: 100vw;
     margin: 0 auto;
-    max-width: 1400px;
+    max-width: 1450px;
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
     grid-column-gap: 3.5rem;

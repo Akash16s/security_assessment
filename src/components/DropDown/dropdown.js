@@ -1,25 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './dropdown.css';
 import { BsFillCaretDownFill, BsFillCaretUpFill } from "react-icons/bs";
-import Form from 'react-bootstrap/Form';
-
+import { Checkbox } from 'pretty-checkbox-react';
 
 const successfulTacticsList = []
 
-const DropDown = (props) => {   
-    
+const DropDown = (props) => {
+
     const getTechniques = async () => {
         let items = JSON.parse(localStorage.getItem('techniques'));
         return items;
     }
+    const [clicked, setClicked] = useState(props.clicked);
 
-    const [clicked,setClicked] = useState(props.clicked);
-
-    const handleClicked = ()=>{
+    const handleClicked = () => {
         setClicked(!clicked);
     }
 
-    const handleCheckBox = async (id) => {
+    const handleCheckBox = async (id,status) => {
+
         const localData = await getTechniques();
         let techniqueArray = localData.filter(function (t) {
             return t.techniqueName === props.techniqueName;
@@ -27,8 +26,9 @@ const DropDown = (props) => {
         let tacticItem = techniqueArray[0].tactics.filter(function (t) {
             return t.tacticId === id;
         });
-       successfulTacticsList.push(tacticItem[0]);
-       localStorage.setItem('successfulTactics', JSON.stringify(successfulTacticsList));
+        tacticItem[0].status = status;
+        successfulTacticsList.push(tacticItem[0]);
+        localStorage.setItem('tacticsStatus', JSON.stringify(successfulTacticsList));
     }
 
     return (
@@ -36,7 +36,7 @@ const DropDown = (props) => {
         <div>
             <div onClick={handleClicked} className='techniqueName'>
                 {props.techniqueName}
-              {clicked ?  <BsFillCaretUpFill /> : <BsFillCaretDownFill />}
+                {clicked ? <BsFillCaretUpFill /> : <BsFillCaretDownFill />}
             </div>
             {
                 clicked ? <article className='tactic'>
@@ -45,9 +45,10 @@ const DropDown = (props) => {
                         (
                             <div key={tactic.tacticId} className='tacticsList'>
                                 {tactic.tacticName}
-                                <Form>
-                                    <Form.Check aria-label="option 1" onChange={() => handleCheckBox(tactic.tacticId)} />
-                                </Form>
+                                <div>
+                                <Checkbox onClick={()=>handleCheckBox(tactic.tacticId,"Success")} color="success" icon={<i className="mdi mdi-check" />} animation="smooth" />
+                                <Checkbox onClick={()=>handleCheckBox(tactic.tacticId,"Failed")} color="danger-o" icon={<i className="mdi mdi-close" />} animation="smooth" />
+                                </div>
                             </div>
                         )
                         )

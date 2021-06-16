@@ -13,7 +13,7 @@ const ScoreCalculator = () => {
     }
 
     const findScore = () =>{
-        let items = JSON.parse(localStorage.getItem('successfulTactics'));
+        let items = JSON.parse(localStorage.getItem('tacticsStatus'));
         console.log(items);
     }
 
