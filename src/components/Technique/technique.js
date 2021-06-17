@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './technique.css';
 import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
@@ -8,12 +8,14 @@ import { firestore } from '../../Firebase/Firebase';
 
 const TechniqueDetails = (props) => {
 
+    const severityParameters = ['Exploitability', 'Impact', 'Severity'];
+
     const getTechniques = async () => {
         let items = JSON.parse(localStorage.getItem('techniques'));
         return items;
     }
 
-    const handleSwitches = async (id, level) => {
+    const handleSwitches = async (id, level, severityParameter) => {
         const localData = await getTechniques();
         let techniqueArray = localData.filter(function (t) {
             return t.techniqueId === props.location.state.techniqueList['techniqueId'];
@@ -21,13 +23,33 @@ const TechniqueDetails = (props) => {
         let tacticArray = techniqueArray[0].tactics.filter(function (t) {
             return t.tacticId === id;
         });
-        tacticArray[0].severityLevel = level;
-        localStorage.setItem('techniques', JSON.stringify(localData));
-        firestore.collection(`tactics`).doc(`${props.location.state.techniqueList['techniqueId']}`).collection(`techniques`).doc(`${id}`).update({
-            'severityLevel' : level
-        });
-        console.log(localData);
 
+        if (severityParameter === 'Exploitability') {
+            tacticArray[0].Exploitability = level;
+        } if (severityParameter === 'Impact') {
+            tacticArray[0].Impact = level;
+        } if (severityParameter === 'Severity') {
+            tacticArray[0].Severity = level;
+        }
+
+        localStorage.setItem('techniques', JSON.stringify(localData));
+
+        if (severityParameter === 'Exploitability') {
+            firestore.collection(`tactics`).doc(`${props.location.state.techniqueList['techniqueId']}`).collection(`techniques`).doc(`${id}`).update({
+                "Exploitability" : level
+            });
+        } if (severityParameter === 'Impact') {
+            firestore.collection(`tactics`).doc(`${props.location.state.techniqueList['techniqueId']}`).collection(`techniques`).doc(`${id}`).update({
+                "Impact" : level
+            });
+        } if (severityParameter === 'Severity') {
+            firestore.collection(`tactics`).doc(`${props.location.state.techniqueList['techniqueId']}`).collection(`techniques`).doc(`${id}`).update({
+                "Severity" : level
+            });
+        }
+
+        
+        console.log(localData);
     }
 
     return (
@@ -46,7 +68,11 @@ const TechniqueDetails = (props) => {
                             <th>Tactic Id</th>
                             <th>Tactic Name</th>
                             <th>Tactic Prime Name</th>
-                            <th>Severity Meter</th>
+                            {
+                                severityParameters.map((item) => (
+                                    <th>{item}</th>
+                                ))
+                            }
                         </tr>
                     </thead>
                     <tbody >
@@ -56,37 +82,41 @@ const TechniqueDetails = (props) => {
                                     <td>{item.tacticId}</td>
                                     <td>{item.tacticName}</td>
                                     <td>{item.tacticPrimeName}</td>
-                                    <td>{
-                                        <div>
-                                            <Form.Check
-                                                type="switch"
-                                                id={v4()}
-                                                toggle
-                                                inline
-                                                checked={item.severityLevel === 'Low' ? true : false}
-                                                label="Low"
-                                                onChange={() => handleSwitches(item.tacticId, 'Low')}
-                                            />
-                                            <Form.Check
-                                                type="switch"
-                                                id={v4()}
-                                                toggle
-                                                checked={item.severityLevel === 'Medium' ? true : false}
-                                                inline
-                                                label="Medium"
-                                                onChange={() => handleSwitches(item.tacticId, 'Medium')}
-                                            />
-                                            <Form.Check
-                                                type="switch"
-                                                id={v4()}
-                                                toggle
-                                                inline
-                                                checked={item.severityLevel === 'High' ? true : false}
-                                                label="High"
-                                                onChange={() => handleSwitches(item.tacticId, 'High')}
-                                            />
-                                        </div>
-                                    }</td>
+                                    {
+                                        severityParameters.map((sP) => (
+                                            <td>{
+                                                <div>
+                                                    <Form.Check
+                                                        type="switch"
+                                                        id={v4()}
+                                                        toggle
+                                                        inline
+                                                        checked={item[sP] === 'Low' ? true : false}
+                                                        label="Low"
+                                                        onChange={() => handleSwitches(item.tacticId, 'Low', sP)}
+                                                    />
+                                                    <Form.Check
+                                                        type="switch"
+                                                        id={v4()}
+                                                        toggle
+                                                        checked={item[sP] === 'Medium' ? true : false}
+                                                        inline
+                                                        label="Medium"
+                                                        onChange={() => handleSwitches(item.tacticId, 'Medium', sP)}
+                                                    />
+                                                    <Form.Check
+                                                        type="switch"
+                                                        id={v4()}
+                                                        toggle
+                                                        inline
+                                                        checked={item[sP] === 'High' ? true : false}
+                                                        label="High"
+                                                        onChange={() => handleSwitches(item.tacticId, 'High', sP)}
+                                                    />
+                                                </div>
+                                            }</td>
+                                        ))
+                                    }
                                 </tr>
                             ))
                         }
@@ -99,4 +129,96 @@ const TechniqueDetails = (props) => {
 
 export default TechniqueDetails;
 
-
+// <td>{
+//                                         <div>
+//                                             <Form.Check
+//                                                 type="switch"
+//                                                 id={v4()}
+//                                                 toggle
+//                                                 inline
+//                                                 checked={item.Exploitability === 'Low' ? true : false}
+//                                                 label="Low"
+//                                                 onChange={() => handleSwitches(item.tacticId, 'Low', 'Exploitability')}
+//                                             />
+//                                             <Form.Check
+//                                                 type="switch"
+//                                                 id={v4()}
+//                                                 toggle
+//                                                 checked={item.Exploitability === 'Medium' ? true : false}
+//                                                 inline
+//                                                 label="Medium"
+//                                                 onChange={() => handleSwitches(item.tacticId, 'Medium', 'Exploitability')}
+//                                             />
+//                                             <Form.Check
+//                                                 type="switch"
+//                                                 id={v4()}
+//                                                 toggle
+//                                                 inline
+//                                                 checked={item.Exploitability === 'High' ? true : false}
+//                                                 label="High"
+//                                                 onChange={() => handleSwitches(item.tacticId, 'High', 'Exploitability')}
+//                                             />
+//                                         </div>
+//                                     }</td>
+//                                     <td>{
+//                                         <div>
+//                                             <Form.Check
+//                                                 type="switch"
+//                                                 id={v4()}
+//                                                 toggle
+//                                                 inline
+//                                                 checked={item.Impact === 'Low' ? true : false}
+//                                                 label="Low"
+//                                                 onChange={() => handleSwitches(item.tacticId, 'Low', 'Impact')}
+//                                             />
+//                                             <Form.Check
+//                                                 type="switch"
+//                                                 id={v4()}
+//                                                 toggle
+//                                                 checked={item.Impact === 'Medium' ? true : false}
+//                                                 inline
+//                                                 label="Medium"
+//                                                 onChange={() => handleSwitches(item.tacticId, 'Medium', 'Impact')}
+//                                             />
+//                                             <Form.Check
+//                                                 type="switch"
+//                                                 id={v4()}
+//                                                 toggle
+//                                                 inline
+//                                                 checked={item.Impact === 'High' ? true : false}
+//                                                 label="High"
+//                                                 onChange={() => handleSwitches(item.tacticId, 'High', 'Impact')}
+//                                             />
+//                                         </div>
+//                                     }</td>
+//                                     <td>{
+//                                         <div>
+//                                             <Form.Check
+//                                                 type="switch"
+//                                                 id={v4()}
+//                                                 toggle
+//                                                 inline
+//                                                 checked={item.Severity === 'Low' ? true : false}
+//                                                 label="Low"
+//                                                 onChange={() => handleSwitches(item.tacticId, 'Low', 'Severity')}
+//                                             />
+//                                             <Form.Check
+//                                                 type="switch"
+//                                                 id={v4()}
+//                                                 toggle
+//                                                 checked={item.Severity === 'Medium' ? true : false}
+//                                                 inline
+//                                                 label="Medium"
+//                                                 onChange={() => handleSwitches(item.tacticId, 'Medium', 'Severity')}
+//                                             />
+//                                             <Form.Check
+//                                                 type="switch"
+//                                                 id={v4()}
+//                                                 toggle
+//                                                 inline
+//                                                 checked={item.Severity === 'High' ? true : false}
+//                                                 label="High"
+//                                                 onChange={() => handleSwitches(item.tacticId, 'High', 'Severity')}
+//                                             />
+//                                         </div>
+//                                     }</td>

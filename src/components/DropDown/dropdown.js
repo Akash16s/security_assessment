@@ -11,6 +11,11 @@ const DropDown = (props) => {
         let items = JSON.parse(localStorage.getItem('techniques'));
         return items;
     }
+    // const getTacticsStatusData = async () => {
+    //     let items = JSON.parse(localStorage.getItem('tacticsStatus'));
+    //     return items;
+    // }
+
     const [clicked, setClicked] = useState(props.clicked);
 
     const handleClicked = () => {
@@ -18,6 +23,16 @@ const DropDown = (props) => {
     }
 
     const handleCheckBox = async (id,status) => {
+
+    //     const tacticsStatusData = await getTacticsStatusData();
+
+    //     if(tacticsStatusData!==null){
+    //     tacticsStatusData.map( (item) => {
+    //         if(item.tacticId === id){
+    //             console.log(localStorage[item]);
+    //         }
+    //     });
+    // }
 
         const localData = await getTechniques();
         let techniqueArray = localData.filter(function (t) {
