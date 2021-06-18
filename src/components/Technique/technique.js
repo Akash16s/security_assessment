@@ -8,7 +8,7 @@ import { firestore } from '../../Firebase/Firebase';
 
 const TechniqueDetails = (props) => {
 
-    const severityParameters = ['Exploitability', 'Impact', 'Severity'];
+    const severityParameters = ['Exploitability', 'Impact'];
 
     const getTechniques = async () => {
         let items = JSON.parse(localStorage.getItem('techniques'));
@@ -28,9 +28,7 @@ const TechniqueDetails = (props) => {
             tacticArray[0].Exploitability = level;
         } if (severityParameter === 'Impact') {
             tacticArray[0].Impact = level;
-        } if (severityParameter === 'Severity') {
-            tacticArray[0].Severity = level;
-        }
+        } 
 
         localStorage.setItem('techniques', JSON.stringify(localData));
 
@@ -42,13 +40,7 @@ const TechniqueDetails = (props) => {
             firestore.collection(`tactics`).doc(`${props.location.state.techniqueList['techniqueId']}`).collection(`techniques`).doc(`${id}`).update({
                 "Impact" : level
             });
-        } if (severityParameter === 'Severity') {
-            firestore.collection(`tactics`).doc(`${props.location.state.techniqueList['techniqueId']}`).collection(`techniques`).doc(`${id}`).update({
-                "Severity" : level
-            });
-        }
-
-        
+        } 
         console.log(localData);
     }
 
