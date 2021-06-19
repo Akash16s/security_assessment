@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './technique.css';
 import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
