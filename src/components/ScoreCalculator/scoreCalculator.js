@@ -12,7 +12,8 @@ const ScoreCalculator = () => {
         1: "Kudos! Nice job keeping your firm safe.",
         2: "Security alright. But, put your security guys to work right now.",
         3: "You're in dangerous waters. This is a severe risk stage. Up your security game!",
-        4: "bsdk band karde company, kuchh na hona tumhara."
+        // 4: "bsdk band karde company, kuchh na hona tumhara."
+        4: "Your security system requires extreme remediation."
     }
 
     const coverageMessage = 'Coverage Score represents the total coverage done on the system. For better Protection Score use as many tactics as you can';
@@ -126,11 +127,11 @@ const ScoreCalculator = () => {
                     <p>
                         {
                             scoreCategory ?
-                                assesmentScore >=90 ? assesmentMessages[0] : 
-                                assesmentScore < 90 && assesmentScore >=70 ? assesmentMessages[1] :
-                                assesmentScore < 70 && assesmentScore >=30 ? assesmentMessages[2] :
-                                assesmentScore < 30 && assesmentScore >=10 ? assesmentMessages[3] :
-                                assesmentMessages[4]
+                                assesmentScore >=90 ? assesmentMessages[0] : //vh
+                                assesmentScore < 90 && assesmentScore >=70 ? assesmentMessages[1] : //h
+                                assesmentScore < 70 && assesmentScore >=30 ? assesmentMessages[2] : //m
+                                assesmentScore < 30 && assesmentScore >=10 ? assesmentMessages[3] : //l
+                                assesmentMessages[4] //vl
 
                                 : coverageMessage
                         }
