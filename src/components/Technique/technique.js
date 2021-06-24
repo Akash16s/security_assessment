@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './technique.css';
 import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
@@ -10,16 +10,25 @@ const TechniqueDetails = (props) => {
 
     const severityParameters = ['Exploitability', 'Impact'];
 
+    const [propsTactics, setPropsTactics] = useState(props.location.state.techniqueList['tactics']);
+
     const getTechniques = async () => {
         let items = JSON.parse(localStorage.getItem('techniques'));
         return items;
     }
 
-    const handleSwitches = async (id, level, severityParameter) => {
-        const localData = await getTechniques();
+    const filterTechniques = async (localData) => {
         let techniqueArray = localData.filter(function (t) {
             return t.techniqueId === props.location.state.techniqueList['techniqueId'];
         });
+        return techniqueArray;
+    }
+
+    const handleSwitches = async (id, level, severityParameter) => {
+        let localData = await getTechniques();
+        
+        let techniqueArray = await filterTechniques(localData);
+
         let tacticArray = techniqueArray[0].tactics.filter(function (t) {
             return t.tacticId === id;
         });
@@ -41,7 +50,13 @@ const TechniqueDetails = (props) => {
                 "Impact" : level
             });
         } 
-        console.log(localData);
+
+        localData = await getTechniques();
+
+        techniqueArray = await filterTechniques(localData);
+
+        setPropsTactics(techniqueArray[0].tactics);
+    
     }
 
     return (
@@ -69,7 +84,7 @@ const TechniqueDetails = (props) => {
                     </thead>
                     <tbody >
                         {
-                            props.location.state.techniqueList['tactics'].map((item) => (
+                            propsTactics.map((item) => (
                                 <tr className='tr' key={item.tacticId}>
                                     <td>{item.tacticId}</td>
                                     <td>{item.tacticName}</td>
@@ -120,97 +135,3 @@ const TechniqueDetails = (props) => {
 }
 
 export default TechniqueDetails;
-
-// <td>{
-//                                         <div>
-//                                             <Form.Check
-//                                                 type="switch"
-//                                                 id={v4()}
-//                                                 toggle
-//                                                 inline
-//                                                 checked={item.Exploitability === 'Low' ? true : false}
-//                                                 label="Low"
-//                                                 onChange={() => handleSwitches(item.tacticId, 'Low', 'Exploitability')}
-//                                             />
-//                                             <Form.Check
-//                                                 type="switch"
-//                                                 id={v4()}
-//                                                 toggle
-//                                                 checked={item.Exploitability === 'Medium' ? true : false}
-//                                                 inline
-//                                                 label="Medium"
-//                                                 onChange={() => handleSwitches(item.tacticId, 'Medium', 'Exploitability')}
-//                                             />
-//                                             <Form.Check
-//                                                 type="switch"
-//                                                 id={v4()}
-//                                                 toggle
-//                                                 inline
-//                                                 checked={item.Exploitability === 'High' ? true : false}
-//                                                 label="High"
-//                                                 onChange={() => handleSwitches(item.tacticId, 'High', 'Exploitability')}
-//                                             />
-//                                         </div>
-//                                     }</td>
-//                                     <td>{
-//                                         <div>
-//                                             <Form.Check
-//                                                 type="switch"
-//                                                 id={v4()}
-//                                                 toggle
-//                                                 inline
-//                                                 checked={item.Impact === 'Low' ? true : false}
-//                                                 label="Low"
-//                                                 onChange={() => handleSwitches(item.tacticId, 'Low', 'Impact')}
-//                                             />
-//                                             <Form.Check
-//                                                 type="switch"
-//                                                 id={v4()}
-//                                                 toggle
-//                                                 checked={item.Impact === 'Medium' ? true : false}
-//                                                 inline
-//                                                 label="Medium"
-//                                                 onChange={() => handleSwitches(item.tacticId, 'Medium', 'Impact')}
-//                                             />
-//                                             <Form.Check
-//                                                 type="switch"
-//                                                 id={v4()}
-//                                                 toggle
-//                                                 inline
-//                                                 checked={item.Impact === 'High' ? true : false}
-//                                                 label="High"
-//                                                 onChange={() => handleSwitches(item.tacticId, 'High', 'Impact')}
-//                                             />
-//                                         </div>
-//                                     }</td>
-//                                     <td>{
-//                                         <div>
-//                                             <Form.Check
-//                                                 type="switch"
-//                                                 id={v4()}
-//                                                 toggle
-//                                                 inline
-//                                                 checked={item.Severity === 'Low' ? true : false}
-//                                                 label="Low"
-//                                                 onChange={() => handleSwitches(item.tacticId, 'Low', 'Severity')}
-//                                             />
-//                                             <Form.Check
-//                                                 type="switch"
-//                                                 id={v4()}
-//                                                 toggle
-//                                                 checked={item.Severity === 'Medium' ? true : false}
-//                                                 inline
-//                                                 label="Medium"
-//                                                 onChange={() => handleSwitches(item.tacticId, 'Medium', 'Severity')}
-//                                             />
-//                                             <Form.Check
-//                                                 type="switch"
-//                                                 id={v4()}
-//                                                 toggle
-//                                                 inline
-//                                                 checked={item.Severity === 'High' ? true : false}
-//                                                 label="High"
-//                                                 onChange={() => handleSwitches(item.tacticId, 'High', 'Severity')}
-//                                             />
-//                                         </div>
-//                                     }</td>
